@@ -1,0 +1,7 @@
+<h1>Fiche Utilisateur</h1>
+
+<ul *ngIf="user">
+    <li>{{user.id}}</li>
+    <li>{{user.name}}</li>
+</ul>
+<p *ngIf !="user">Utilisateur inexistant</p>
