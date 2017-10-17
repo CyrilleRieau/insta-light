@@ -1,7 +1,13 @@
 <h1>Fiche Utilisateur</h1>
 
-<ul *ngIf="user">
-    <li>{{user.id}}</li>
-    <li>{{user.name}}</li>
-</ul>
-<p *ngIf !="user">Utilisateur inexistant</p>
+<table>
+    <tr *ngFor="let user of listeUser">
+        <td>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td><button (click)="removeUser(user.id)">Supprimer</button></td>
+        <td><button (click)="aModifier=user">Modifier</button></td>
+    </tr>
+</table>
+
+<app-adduser [numeroUser]="listeUser.length +1" (onAdd)="addUser($event)"></app-adduser>
+<app-modifyuser *ngIf="aModifier" [user]="aModifier" (onSave)="modifyUser($event)"></app-modifyuser>

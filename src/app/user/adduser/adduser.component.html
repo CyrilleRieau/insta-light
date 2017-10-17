@@ -1,0 +1,9 @@
+<section>
+    <h2>Ajouter User n°{{numeroUser}}</h2>
+
+    <label>Username</label>
+    <input type="text" [(ngModel)]="newUser.username">
+    <label>Password</label>
+    <input type="text" [(ngModel)]="newUser.password">
+    <button (click)="addUser()">Ajouter</button>
+</section>
