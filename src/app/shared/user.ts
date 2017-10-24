@@ -1,4 +1,5 @@
 export class User {
+    token:string;
     birthdate:string;
     mail:string;
     constructor( 

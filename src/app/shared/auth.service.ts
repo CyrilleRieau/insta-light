@@ -9,17 +9,29 @@ import { Subject, BehaviorSubject } from 'rxjs';
 export class AuthService {
   user:BehaviorSubject<User> =new BehaviorSubject(null);
   urlApi:string='http://localhost:3000/user';
-
+token:string;
   constructor(private http:HttpClient) {
-    this.user.next(JSON.parse(localStorage.getItem('user')));
+    this.init();
    }
+
+  init() {
+    this.token=localStorage.getItem('token');
+    if(this.token){
+    let expiration = parseInt(this.token.split('|')[1]);
+    if (expiration < new Date().getTime()){
+      this.getByToken(this.token).subscribe((user)=> {
+    this.user.next(user);
+    });
+    }
+  }
+};
 
   login(username:string, password:string, birthdate:Date, mail:string):Observable<boolean>{
     return this.http.get<User[]>
     (this.urlApi+'?username='+username+'&password='+password+'&mail='+mail+'&birthdate='+birthdate)
     .map((users)=> {
     if(users.length === 1){
-      localStorage.setItem('user', JSON.stringify(users[0]));
+      localStorage.setItem('user', JSON.stringify(users[0].token));
       this.user.next(users[0]);
       return true;
     }
@@ -35,5 +47,14 @@ export class AuthService {
   }
   getByUsername(username:string):Observable<User[]> {
     return this.http.get<User[]>(this.urlApi+'?username='+username);
+  }
+  getByToken(token:string):Observable<User> {
+    return this.http.get<User[]>(this.urlApi+'?token='+token)
+    .map((users)=> {
+      if(users.length === 1) {
+        return users[0];
+      }
+      return null;
+    })
   }
 }

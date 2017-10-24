@@ -1,69 +1,71 @@
 {
-  "user": [
-    {
-      "id": 1,
-      "username": "bezu",
-      "password": "bezu"
-    },
-    {
-      "id": 2,
-      "username": "test",
-      "password": "test"
-    },
-    {
-      "username": "hello",
-      "password": "hello",
-      "id": 4
-    },
-    {
-      "username": "Toto2",
-      "password": "toto",
-      "id": 5
-    },
-    {
-      "username": "tata",
-      "password": "tzta",
-      "mail": "tztz@gl",
-      "birthdate": "10/10/2010",
-      "id": 6
-    },
-    {
-      "username": "tata",
-      "password": "tzta",
-      "mail": "tztz@gl",
-      "birthdate": "10/10/2010",
-      "id": 7
-    }
-  ],
-  "photo": [
-    {
-      "id": 1,
-      "description": "Cute cat",
-      "owner": "2",
-      "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLZmP98OeOqfVu4wCaDJTcH0oGj4Eo7LAhTfpFOJ_VpBFUlbm0",
-      "likes": [
-        1,
-        3
-      ]
-    },
-    {
-      "id": 2,
-      "description": "Lovely dog",
-      "owner": "1",
-      "link": "http://static.hudo.com/images/posters/3184/image.jpg",
-      "likes": [
-        2
-      ]
-    },
-    {
-      "id": 3,
-      "description": "Adorable Otter",
-      "owner": "3",
-      "link": "http://www.awesomeinventions.com/wp-content/uploads/2016/08/adorable-otters-need.jpg",
-      "likes": [
-        1,
-        2
-      ]
-    }
-  ]
+    "user": [{
+            "id": 1,
+            "username": "bezu",
+            "password": "bezu",
+            "token": "ABC|1509494400000"
+        },
+        {
+            "id": 2,
+            "username": "test",
+            "password": "test",
+            "token": "BCD|1509494400000"
+        },
+        {
+            "username": "hello",
+            "password": "hello",
+            "token": "CDE|1509494400000",
+            "id": 4
+        },
+        {
+            "username": "Toto2",
+            "password": "toto",
+            "token": "DEF|1509494400000",
+            "id": 5
+        },
+        {
+            "username": "tata",
+            "password": "tzta",
+            "mail": "tztz@gl",
+            "birthdate": "10/10/2010",
+            "id": 6
+        },
+        {
+            "username": "tata",
+            "password": "tzta",
+            "mail": "tztz@gl",
+            "birthdate": "10/10/2010",
+            "id": 7
+        }
+    ],
+    "photo": [{
+            "id": 1,
+            "description": "Cute cat",
+            "owner": "2",
+            "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLZmP98OeOqfVu4wCaDJTcH0oGj4Eo7LAhTfpFOJ_VpBFUlbm0",
+            "likes": [
+                1,
+                3
+            ]
+        },
+        {
+            "id": 2,
+            "description": "Lovely dog",
+            "owner": "1",
+            "link": "http://static.hudo.com/images/posters/3184/image.jpg",
+            "likes": [
+                2
+            ]
+        },
+        {
+            "id": 3,
+            "description": "Adorable Otter",
+            "owner": "3",
+            "link": "http://www.awesomeinventions.com/wp-content/uploads/2016/08/adorable-otters-need.jpg",
+            "likes": [
+                1,
+                2
+            ]
+        }
+    ]
 }
