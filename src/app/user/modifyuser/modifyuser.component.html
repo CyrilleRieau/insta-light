@@ -3,5 +3,9 @@
         <input type="text" [(ngModel)]="user.username">
     </li>
     <li><input type="text" [(ngModel)]="user.password">
+        <li>
+            <input type="date" [(ngModel)]="user.birthdate">
+        </li>
+        <li><input type="text" [(ngModel)]="user.mail">
 </ul>
 <button (click)="saveUser()">Sauvegarder</button>

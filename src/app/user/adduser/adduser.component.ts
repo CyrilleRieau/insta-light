@@ -15,8 +15,10 @@ eventAjout:EventEmitter<User> = new EventEmitter();
 
 constructor() { 
   this.newUser = {
-    username : '',
-    password:''
+    username: '',
+    password:'',
+    birthdate:'',
+    mail:'',
     };
 }
 

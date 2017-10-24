@@ -9,6 +9,8 @@ import { AuthService } from '../shared/auth.service';
 export class LoginComponent implements OnInit {
 username:string;
 password:string;
+mail:string;
+birthdate:Date;
 connected:boolean = false;
   constructor(private auth:AuthService) { }
 
@@ -16,7 +18,7 @@ connected:boolean = false;
   }
 
   login(){
-    this.auth.login(this.username, this.password).subscribe(
+    this.auth.login(this.username, this.password, this.birthdate, this.mail).subscribe(
     logged => this.connected = logged);
   }
   

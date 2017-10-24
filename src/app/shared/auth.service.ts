@@ -14,9 +14,9 @@ export class AuthService {
     this.user.next(JSON.parse(localStorage.getItem('user')));
    }
 
-  login(username:string, password:string):Observable<boolean>{
+  login(username:string, password:string, birthdate:Date, mail:string):Observable<boolean>{
     return this.http.get<User[]>
-    (this.urlApi+'?username='+username+'&password='+password)
+    (this.urlApi+'?username='+username+'&password='+password+'&mail='+mail+'&birthdate='+birthdate)
     .map((users)=> {
     if(users.length === 1){
       localStorage.setItem('user', JSON.stringify(users[0]));
@@ -29,5 +29,11 @@ export class AuthService {
   logout():void{
     localStorage.removeItem('user');
     this.user.next(undefined);
+  }
+  signup(user:User):Observable<User> {
+    return this.http.post<User>(this.urlApi, user);
+  }
+  getByUsername(username:string):Observable<User[]> {
+    return this.http.get<User[]>(this.urlApi+'?username='+username);
   }
 }

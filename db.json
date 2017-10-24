@@ -19,6 +19,20 @@
       "username": "Toto2",
       "password": "toto",
       "id": 5
+    },
+    {
+      "username": "tata",
+      "password": "tzta",
+      "mail": "tztz@gl",
+      "birthdate": "10/10/2010",
+      "id": 6
+    },
+    {
+      "username": "tata",
+      "password": "tzta",
+      "mail": "tztz@gl",
+      "birthdate": "10/10/2010",
+      "id": 7
     }
   ],
   "photo": [
